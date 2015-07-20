@@ -1,1 +1,3 @@
-/home/ctesta/.gitconfig
+[user]
+	email = ctesta000@gmail.com
+	name = Christian Testa
