@@ -1,3 +1,5 @@
 [user]
 	email = ctesta000@gmail.com
 	name = Christian Testa
+[push]
+	default = simple
