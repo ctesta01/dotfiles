@@ -18,5 +18,7 @@ alias less='less --RAW-CONTROL-CHARS'
 alias grep='grep --color=auto'
 alias tree='tree -C -L 2'
 alias ls='ls ${LS_OPTS}'
+alias ll='ls -lah'
+alias lt='ls -lahrt'
 
 PS1='[\u@\e[38;5;30m\h\e[0m \W]\\$ '
