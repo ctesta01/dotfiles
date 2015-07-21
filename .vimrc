@@ -3,7 +3,19 @@
 " Started on July 19, 2015
 
 
+" VIM Global Settings
+syntax enable
+filetype plugin indent on
 
+
+" Adding Pathogen
+" pathogen is a plugin and runtime manipulator
+" https://github.com/tpope/vim-pathogen
+execute pathogen#infect()
+
+" Adding keybinding for NERDTree
+" https://github.com/scrooloose/nerdtree
+map <C-n> :NERDTreeToggle<CR>
 
 
 " Auto-Continue Commenting
@@ -12,17 +24,17 @@ set formatoptions+=cro
 " Enable the slate theme for vim
 " located in 
 " /usr/share/vim/vim74/colors/slate.vim
-syntax enable
 colorscheme slate
 
 
 " Sets tabbing appropriately. 
 " Which is to tab with a 4-space wide
 " single character.
-filetype plugin indent on
 set tabstop=4
+set softtabstop=0
 set shiftwidth=4
 set expandtab
+set smarttab
 
 
 " Comments blocks of code
