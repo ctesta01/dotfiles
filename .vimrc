@@ -17,6 +17,19 @@ execute pathogen#infect()
 " https://github.com/scrooloose/nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
+" This unsets the "last search pattern" register by hitting return
+" After your search, hit return and it will clear the search highlighting
+nnoremap <CR> :noh<CR><CR>
+
+" Mapping ,y to saving selection to a file based copy/paste board
+" and ,p to pasting from that and clearing the file
+vmap <silent> ,y y:new<CR>:call setline(1,getregtype())<CR>o<Esc>P:wq! ~/reg.txt<CR>
+nmap <silent> ,y :new<CR>:call setline(1,getregtype())<CR>o<Esc>P:wq! ~/reg.txt<CR>
+map <silent> ,p :sview ~/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>p
+map <silent> ,P :sview ~/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>P
+
+
+
 
 " Auto-Continue Commenting
 set formatoptions+=cro
