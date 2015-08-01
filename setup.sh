@@ -3,7 +3,7 @@
 # This is written to setup these dotfiles for a
 # user on a centos box, and haven't been tested anywhere else.
 
-echo -e -e "\n\e[38;5;198mWARNING: This will overwrite your dotfiles (.bashrc, .vimrc, .gitconfig, .tmux.conf)\e[39m" 
+echo -e "\n\e[38;5;198mWARNING: This will overwrite your dotfiles (.bashrc, .vimrc, .gitconfig, .tmux.conf)\e[39m" 
 read -rsp $'Press any key to continue...\n' -n1 key
 
 # Testa's Setup Script
