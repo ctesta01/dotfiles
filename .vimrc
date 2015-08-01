@@ -21,13 +21,10 @@ map <C-n> :NERDTreeToggle<CR>
 " After your search, hit return and it will clear the search highlighting
 nnoremap <CR> :noh<CR><CR>
 
-" Mapping ,y to saving selection to a file based copy/paste board
-" and ,p to pasting from that and clearing the file
-vmap <silent> ,y y:new<CR>:call setline(1,getregtype())<CR>o<Esc>P:wq! ~/reg.txt<CR>
-nmap <silent> ,y :new<CR>:call setline(1,getregtype())<CR>o<Esc>P:wq! ~/reg.txt<CR>
-map <silent> ,p :sview ~/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>p
-map <silent> ,P :sview ~/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>P
-
+" Speed up response to ESC key
+set notimeout
+set ttimeout
+set timeoutlen=100
 
 
 
@@ -62,3 +59,10 @@ autocmd FileType vim              let b:comment_leader = '" '
 noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
+
+" General key remappings:
+" Maps H and L to start and end of row
+map H ^
+map L $
+" Map space to :
+nnoremap <Space> :
