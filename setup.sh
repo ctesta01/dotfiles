@@ -34,6 +34,7 @@ ln -fs ~/dotfiles/.tmux.conf ~/.tmux.conf
 #
 sudo yum -y install vim
 sudo yum -y install tree
+sudo yum -y install tmux
 sudo yum -y groupinstall "Development tools"
 sudo yum -y install nginx
 sudo yum -y install gcc gcc-c++
