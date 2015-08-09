@@ -23,6 +23,7 @@ alias lah='ls -lah'
 alias lt='ls -lahrt'
 alias lahrt='ls -lahrt'
 alias pw='python -m SimpleHTTPServer'
+alias ipgrep='grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"'
 
 PS1='[\u@\e[38;5;30m\h\e[0m \W]\\$ '
 
