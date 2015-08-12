@@ -28,13 +28,10 @@ map <C-n> :NERDTreeToggle<CR>
 " After your search, hit return and it will clear the search highlighting
 nnoremap <CR> :noh<CR><CR>
 
-" Mapping ,y to saving selection to a file based copy/paste board
-" and ,p to pasting from that and clearing the file
-vmap <silent> ,y y:new<CR>:call setline(1,getregtype())<CR>o<Esc>P:wq! ~/reg.txt<CR>
-nmap <silent> ,y :new<CR>:call setline(1,getregtype())<CR>o<Esc>P:wq! ~/reg.txt<CR>
-map <silent> ,p :sview ~/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>p
-map <silent> ,P :sview ~/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>P
-
+" Speed up response to ESC key
+set notimeout
+set ttimeout
+set timeoutlen=100
 
 
 
@@ -61,6 +58,7 @@ set smarttab
 " Allows you to type ,cc and ,cu to
 " comment in vim according to the environment
 autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
+autocmd FileType js               let b:comment_leader = '// '
 autocmd FileType sh,ruby,python   let b:comment_leader = '# '
 autocmd FileType conf,fstab       let b:comment_leader = '# '
 autocmd FileType tex              let b:comment_leader = '% '
@@ -70,31 +68,10 @@ noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<C
 noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
 
-" Installing Powerline
-" set guifont=Inconsolata\ for\ Powerline:h15
-" let g:Powerline_symbols = 'fancy'
-" set encoding=utf-8
-" set t_Co=256
-" set fillchars+=stl:\ ,stlnc:\
-" set term=xterm-256color
-" set termencoding=utf-8
-" source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
-" set laststatus=2
-
-" set guifont=Inconsolata\ for\ Powerline:h15
-" let g:Powerline_symbols = 'fancy'
-" set encoding=utf-8
-" set t_Co=256
-" set fillchars+=stl:\ ,stlnc:\
-" set term=xterm-256color
-" set termencoding=utf-8
-"
+" Installing Powerline for Vim
 set rtp+=/Users/ctesta/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
- 
-" These lines setup the environment to show graphics and colors correctly.
 set nocompatible
 set t_Co=256
- 
 let g:minBufExplForceSyntaxEnable = 1
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
@@ -108,7 +85,13 @@ if ! has('gui_running')
       au InsertLeave * set timeoutlen=1000
    augroup END
 endif
- 
 set laststatus=2 " Always display the statusline in all windows
 set guifont=Inconsolata\ for\ Powerline:h14
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+
+" General key remappings:
+" Maps H and L to start and end of row
+map H ^
+map L $
+" Map space to :
+nnoremap <Space> :

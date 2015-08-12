@@ -26,11 +26,14 @@ export LS_OPTS='--color=auto'
 alias less='less --RAW-CONTROL-CHARS'
 alias grep='grep --color=auto'
 alias tree='tree -C -L 2'
-alias ls='ls ${LS_OPTS}'
-alias ll='ls -lh'
-alias la='ls -lah'
+alias ls='ls -G'
+alias ll='ls -lah'
 alias lah='ls -lah'
 alias lt='ls -lahrt'
 alias lahrt='ls -lahrt'
+alias pw='python -m SimpleHTTPServer'
+alias ipgrep='grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"'
 
 PS1='[\u@\e[38;5;30m\h\e[0m \W]\\$ '
+
+export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
