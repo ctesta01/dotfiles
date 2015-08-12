@@ -5,8 +5,15 @@
 
 " VIM Global Settings
 syntax enable
-filetype plugin indent on
+set nocompatible
 
+" Bundle
+" filetype off
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+" Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" call vundle#end()
+filetype plugin indent on    " required
 
 " Adding Pathogen
 " pathogen is a plugin and runtime manipulator
@@ -62,3 +69,46 @@ autocmd FileType vim              let b:comment_leader = '" '
 noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
+
+" Installing Powerline
+" set guifont=Inconsolata\ for\ Powerline:h15
+" let g:Powerline_symbols = 'fancy'
+" set encoding=utf-8
+" set t_Co=256
+" set fillchars+=stl:\ ,stlnc:\
+" set term=xterm-256color
+" set termencoding=utf-8
+" source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
+" set laststatus=2
+
+" set guifont=Inconsolata\ for\ Powerline:h15
+" let g:Powerline_symbols = 'fancy'
+" set encoding=utf-8
+" set t_Co=256
+" set fillchars+=stl:\ ,stlnc:\
+" set term=xterm-256color
+" set termencoding=utf-8
+"
+set rtp+=/Users/ctesta/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+ 
+" These lines setup the environment to show graphics and colors correctly.
+set nocompatible
+set t_Co=256
+ 
+let g:minBufExplForceSyntaxEnable = 1
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+ 
+if ! has('gui_running')
+   set ttimeoutlen=10
+   augroup FastEscape
+      autocmd!
+      au InsertEnter * set timeoutlen=0
+      au InsertLeave * set timeoutlen=1000
+   augroup END
+endif
+ 
+set laststatus=2 " Always display the statusline in all windows
+set guifont=Inconsolata\ for\ Powerline:h14
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
