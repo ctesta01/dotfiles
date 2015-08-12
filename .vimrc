@@ -5,8 +5,15 @@
 
 " VIM Global Settings
 syntax enable
-filetype plugin indent on
+set nocompatible
 
+" Bundle
+" filetype off
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+" Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" call vundle#end()
+filetype plugin indent on    " required
 
 " Adding Pathogen
 " pathogen is a plugin and runtime manipulator
@@ -51,6 +58,7 @@ set smarttab
 " Allows you to type ,cc and ,cu to
 " comment in vim according to the environment
 autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
+autocmd FileType js               let b:comment_leader = '// '
 autocmd FileType sh,ruby,python   let b:comment_leader = '# '
 autocmd FileType conf,fstab       let b:comment_leader = '# '
 autocmd FileType tex              let b:comment_leader = '% '
@@ -59,6 +67,27 @@ autocmd FileType vim              let b:comment_leader = '" '
 noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
+
+" Installing Powerline for Vim
+set rtp+=/Users/ctesta/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+set nocompatible
+set t_Co=256
+let g:minBufExplForceSyntaxEnable = 1
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+ 
+if ! has('gui_running')
+   set ttimeoutlen=10
+   augroup FastEscape
+      autocmd!
+      au InsertEnter * set timeoutlen=0
+      au InsertLeave * set timeoutlen=1000
+   augroup END
+endif
+set laststatus=2 " Always display the statusline in all windows
+set guifont=Inconsolata\ for\ Powerline:h14
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
 " General key remappings:
 " Maps H and L to start and end of row
