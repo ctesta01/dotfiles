@@ -28,3 +28,10 @@ alias ipgrep='grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"'
 PS1='[\u@\e[38;5;30m\h\e[0m \W]\\$ '
 
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
+
+if [ -e /usr/share/terminfo/78/xterm-256color ]; then
+        export TERM='xterm-256color'
+else
+        export TERM='xterm-color'
+fi
+
