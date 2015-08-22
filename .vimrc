@@ -20,6 +20,9 @@ filetype plugin indent on    " required
 " https://github.com/tpope/vim-pathogen
 execute pathogen#infect()
 
+" Adding ag.vim to runtime path
+set runtimepath^=~/.vim/bundle/ag
+
 " Adding keybinding for NERDTree
 " https://github.com/scrooloose/nerdtree
 map <C-n> :NERDTreeToggle<CR>
