@@ -79,7 +79,6 @@ let g:minBufExplForceSyntaxEnable = 1
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
- 
 if ! has('gui_running')
    set ttimeoutlen=10
    augroup FastEscape
@@ -96,5 +95,7 @@ set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusl
 " Maps H and L to start and end of row
 map H ^
 map L $
-" Map space to :
-nnoremap <Space> :
+
+" More natural split opening
+set splitbelow
+set splitright
