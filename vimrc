@@ -15,6 +15,11 @@ set nocompatible
 " call vundle#end()
 filetype plugin indent on    " required
 
+
+" Adding ignore.vim
+" Ignore file regex for various plugins
+source ~/.vim/ignore.vim
+
 " Adding Pathogen
 " pathogen is a plugin and runtime manipulator
 " https://github.com/tpope/vim-pathogen
@@ -35,8 +40,6 @@ nnoremap <CR> :noh<CR><CR>
 set notimeout
 set ttimeout
 set timeoutlen=100
-
-
 
 " Auto-Continue Commenting
 set formatoptions+=cro
@@ -60,8 +63,8 @@ set smarttab
 " Comments blocks of code
 " Allows you to type ,cc and ,cu to
 " comment in vim according to the environment
-autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
-autocmd FileType js               let b:comment_leader = '// '
+autocmd FileType c,cpp,java,scala let b:comment_leader = '\/\/ '
+autocmd FileType js               let b:comment_leader = '\/\/ '
 autocmd FileType sh,ruby,python   let b:comment_leader = '# '
 autocmd FileType conf,fstab       let b:comment_leader = '# '
 autocmd FileType tex              let b:comment_leader = '% '
