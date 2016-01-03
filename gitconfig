@@ -1,7 +1,22 @@
+[core]
+    editor = /usr/bin/vim
+    excludesfile = /Users/ctesta/git/dotfiles/gitignore_global
+    pager = less -x4
+
 [user]
-	email = christian.testa@jomi.com
-	name = Christian Testa
+email = christian.testa@jomi.com
+name = Christian Testa
+
 [push]
-	default = simple
+default = simple
+
 [alias]
-    tree = log --graph --decorate --pretty=oneline --abbrev-commit
+ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+le = log --oneline --decorate
+filelog = log -u
+fl = log -u
+
