@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/ctesta/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -53,7 +53,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -82,21 +82,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias free="
-ps axww \
-    | cut -c 28- \
-    | distribution --tokenize=word --match=word --char='|' --width=90 --height=25"
-alias pw="python -m SimpleHTTPServer"
-alias ipgrep='grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"'
-alias lah='ls -lah'
-alias lahrt='ls -lahrt'
-alias tree='tree -C -L 2'
-alias vim='vimr'
-
-
-# Installing Powerline for ZSH
-if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
-    source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-fi
-
-
+alias vim="vimr"

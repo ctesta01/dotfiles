@@ -3,3 +3,5 @@
 	name = Christian Testa
 [push]
 	default = simple
+[alias]
+    tree = log --graph --decorate --pretty=oneline --abbrev-commit
