@@ -57,6 +57,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+export PIP_REQUIRE_VIRTUALENV=true
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -83,3 +85,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="vimr"
+gpip(){
+   PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
