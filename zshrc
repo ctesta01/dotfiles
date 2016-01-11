@@ -21,6 +21,7 @@ plugins=(git)
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 source $ZSH/oh-my-zsh.sh
 export PIP_REQUIRE_VIRTUALENV=true
+source ~/.autoenv/activate.sh
 
 
 # You may need to manually set your language environment
