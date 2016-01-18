@@ -1,5 +1,4 @@
 [core]
-    excludesfile = /Users/ctesta/git/dotfiles/gitignore_global
     pager = less -x4
 
 [user]
