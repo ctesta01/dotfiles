@@ -48,7 +48,10 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim="vimr"
+alias vim='vimr'
 gpip(){
    PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+alias -g wsend='/Users/ctesta/.wsend/wsend'

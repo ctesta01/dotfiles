@@ -95,3 +95,6 @@
     
     # list all aliases
     la = "!git config -l | grep alias | cut -c 7-"
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f

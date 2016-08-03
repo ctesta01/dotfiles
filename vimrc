@@ -1,6 +1,8 @@
 " VIM CONF FILE
 " Please take care of me.
 " Started on July 19, 2015
+" 
+" 
 
 
 " VIM Global Settings
@@ -24,13 +26,6 @@ source ~/.vim/ignore.vim
 " pathogen is a plugin and runtime manipulator
 " https://github.com/tpope/vim-pathogen
 execute pathogen#infect()
-
-" Adding ag.vim to runtime path
-set runtimepath^=~/.vim/bundle/ag
-
-" Adding keybinding for NERDTree
-" https://github.com/scrooloose/nerdtree
-map <C-n> :NERDTreeToggle<CR>
 
 " This unsets the "last search pattern" register by hitting return
 " After your search, hit return and it will clear the search highlighting
@@ -58,6 +53,7 @@ set softtabstop=0
 set shiftwidth=4
 set expandtab
 set smarttab
+set autoindent
 
 
 " Comments blocks of code
@@ -102,3 +98,6 @@ map L $
 " More natural split opening
 set splitbelow
 set splitright
+
+" Delete key should act like it's supposed to! 
+set backspace=2
