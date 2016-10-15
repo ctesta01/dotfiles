@@ -20,7 +20,9 @@ filetype plugin indent on    " required
 
 " Adding ignore.vim
 " Ignore file regex for various plugins
-source ~/.vim/ignore.vim
+if !empty(glob("~/.vim/ignore.vim"))
+    source ~/.vim/ignore.vim
+endif
 
 " Adding Pathogen
 " pathogen is a plugin and runtime manipulator
