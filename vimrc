@@ -101,3 +101,4 @@ set splitright
 
 " Delete key should act like it's supposed to! 
 set backspace=2
+
