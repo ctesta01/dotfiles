@@ -97,6 +97,9 @@ set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusl
 map H ^
 map L $
 
+" nerd tree Ctrl-N
+map <C-n> :NERDTreeToggle<CR>
+
 " More natural split opening
 set splitbelow
 set splitright
@@ -104,3 +107,4 @@ set splitright
 " Delete key should act like it's supposed to! 
 set backspace=2
 
+set mouse=a
