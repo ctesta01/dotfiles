@@ -12,7 +12,7 @@ Plug 'jalvesaq/Nvim-R'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/markdown'
+Plug 'tpope/vim-markdown'
 Plug 'maverickg/stan.vim'
 
 " NERD tree will be loaded on the first invocation of NERDTreeToggle command

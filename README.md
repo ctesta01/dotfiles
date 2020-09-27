@@ -9,5 +9,5 @@ This is a repository of my dotfiles.
 
 # Remember to Alias
 
-    ln -s gitignore_global ~/.config/git/ignore
-    ln -s nvim_config.vim ~/.config/nvim/init.vim
+    cd ~/.config/nvim/;  ln -s ~/Documents/dotfiles/nvim_config.vim init.vim
+    mkdir ~/.config/git/; cd ~/.config/git/; ln -s ~/Documents/dotfiles/gitignore_global ignore
