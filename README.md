@@ -1,5 +1,5 @@
 # Dotfiles!
-This is a repository of my dotfiles. Feel free to take what you'd like, but I'd recommend taking a look at the code I based my configurations from, or sourced from.
+This is a repository of my dotfiles. 
 
 ![Puppy hopping up stairs](http://i.imgur.com/vYuYhRv.gif)
 
